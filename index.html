@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santos | Bespoke Woodworking</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">SANTOS</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact" class="btn-primary">Commission a Piece</a></li>
+        </ul>
+        <div class="hamburger">
+            <i data-feather="menu"></i>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <h1>Crafting Soul into Wood</h1>
+            <p>Bespoke carpentry & fine furniture designed for your life.</p>
+            <a href="#portfolio" class="btn-outline">View Projects</a>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <div class="about-grid">
+            <div class="about-image fade-in">
+                <img src="assets/profile.jpg" alt="Santos Carpenter">
+            </div>
+            <div class="about-text fade-in">
+                <h2>The Artisan</h2>
+                <p>Hello, I am <strong>Santos</strong>. I believe that wood is not just a material, but a living medium
+                    that tells a story.</p>
+                <p>Specializing in custom commissions, I blend traditional joinery techniques with modern aesthetics. My
+                    goal is to create heirloom-quality pieces that stand the test of time, functional art that elevates
+                    your daily space.</p>
+                <div class="stats">
+                    <div><strong>10+</strong><br>Years Exp.</div>
+                    <div><strong>50+</strong><br>Unique Projects</div>
+                    <div><strong>100%</strong><br>Handmade</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Selected Works</h2>
+            <div class="gallery">
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="assets/frenoPuerta.png" alt="Hand-carved Doorstop">
+                    </div>
+                    <div class="card-info">
+                        <h3>Sculpted Door Wedge</h3>
+                        <p>Functional decor. Hand-carved from solid walnut with an ergonomic design.</p>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="assets/marco.png" alt="Custom Frames">
+                    </div>
+                    <div class="card-info">
+                        <h3>Floating Oak Frames</h3>
+                        <p>Minimalist frames designed to highlight memories without distraction.</p>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="assets/parque.png" alt="Parquet Flooring">
+                    </div>
+                    <div class="card-info">
+                        <h3>Herringbone Parquet</h3>
+                        <p>Restoration and installation of classic hardwood flooring. Precision fit.</p>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image placeholder-img">
+                        <span>Coming Soon</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Custom Dining Table</h3>
+                        <p>A commissioned 8-seater table made from reclaimed chestnut.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="container">
+        <h2 class="section-title">My Approach</h2>
+        <div class="process-grid">
+            <div class="process-item fade-in">
+                <i data-feather="message-circle"></i>
+                <h3>1. Consultation</h3>
+                <p>We discuss your vision, space, and needs to sketch the initial concept.</p>
+            </div>
+            <div class="process-item fade-in">
+                <i data-feather="pen-tool"></i>
+                <h3>2. Design & Selection</h3>
+                <p>Choosing the perfect timber and refining the design specifications.</p>
+            </div>
+            <div class="process-item fade-in">
+                <i data-feather="box"></i>
+                <h3>3. Crafting</h3>
+                <p>Meticulous hand-work, sanding, and finishing in the workshop.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-dark">
+        <div class="container contact-container">
+            <div class="contact-text">
+                <h2>Let's build something beautiful.</h2>
+                <p>Currently accepting commissions for [Current Month]. Tell me about your project.</p>
+                <ul class="contact-details">
+                    <li><i data-feather="mail"></i> contact@santoswood.com</li>
+                    <li><i data-feather="instagram"></i> @santos_woodworks</li>
+                    <li><i data-feather="map-pin"></i> Available Worldwide</li>
+                </ul>
+            </div>
+            <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <select name="type">
+                    <option value="furniture">Custom Furniture</option>
+                    <option value="flooring">Flooring / Parquet</option>
+                    <option value="decor">Small Decor / Objects</option>
+                    <option value="other">Other Inquiry</option>
+                </select>
+                <textarea name="message" rows="5" placeholder="Project details..." required></textarea>
+                <button type="submit" class="btn-primary">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Santos Woodworking. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace()
+    </script>
+</body>
+
+</html>
