@@ -344,3 +344,58 @@ nav {
         padding: 3rem 5%;
     }
 }
+
+/* --- Dark Theme Overrides --- */
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e3dcd2;
+    --secondary-color: #2c2c2c;
+    --white: #1a1a1a;
+}
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+    color: #f9f7f2;
+}
+body.dark-theme .hero::after {
+    background: rgba(18, 18, 18, 0.85);
+}
+body.dark-theme .card {
+    background: #1a1a1a;
+}
+body.dark-theme .bg-light {
+    background-color: #1a1a1a;
+}
+body.dark-theme .bg-dark {
+    color: #e3dcd2;
+}
+body.dark-theme .placeholder-img {
+    background: #2c2c2c;
+    color: #888;
+}
+body.dark-theme .logo img {
+    filter: invert(1) brightness(2);
+}
+body.dark-theme .btn-primary {
+    background: #f9f7f2;
+    color: #121212;
+    border-color: #f9f7f2;
+}
+body.dark-theme .btn-primary:hover {
+    background: transparent;
+    color: #f9f7f2;
+}
+body.dark-theme .btn-outline {
+    border-color: #f9f7f2;
+    color: #f9f7f2;
+}
+body.dark-theme .btn-outline:hover {
+    background: #f9f7f2;
+    color: #121212;
+}
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form select,
+body.dark-theme .contact-form textarea {
+    background: #222;
+    color: #f9f7f2;
+}
