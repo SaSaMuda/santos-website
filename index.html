@@ -4,27 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santos | Craft, Repair & Creative Solutions</title>
+    <title data-en="Santos | Craft, Repair & Creative Solutions" data-es="Santos | Artesanía, Reparación y Soluciones Creativas" data-de="Santos | Handwerk, Reparatur & Kreative Lösungen">Santos | Craft, Repair & Creative Solutions</title>
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
 
-    <nav>
-        <div class="logo">
-            <img src="assets/SabioOriginalLogo.svg" alt="Sabio Logo" style="height: 50px; width: auto;">
+    <!-- Welcome Popup -->
+    <div id="welcome-popup" class="popup-overlay">
+        <div class="popup-content">
+            <h2 data-en="Welcome!" data-es="¡Bienvenido!" data-de="Willkommen!">Welcome!</h2>
+            <p data-en="Please select your preferences before entering:" data-es="Por favor, selecciona tus preferencias antes de entrar:" data-de="Bitte wählen Sie Ihre Einstellungen, bevor Sie eintreten:">Please select your preferences before entering:</p>
+            
+            <div class="popup-options">
+                <div class="option-group">
+                    <label data-en="Language:" data-es="Idioma:" data-de="Sprache:">Language:</label>
+                    <select id="popup-lang-select">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label data-en="Theme:" data-es="Tema:" data-de="Design:">Theme:</label>
+                    <select id="popup-theme-select">
+                        <option value="light" data-en="Light" data-es="Claro" data-de="Hell">Light</option>
+                        <option value="dark" data-en="Dark" data-es="Oscuro" data-de="Dunkel">Dark</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="enter-btn" class="btn-primary" data-en="Enter Site" data-es="Entrar al Sitio" data-de="Seite betreten">Enter Site</button>
         </div>
+    </div>
+
+    <nav>
+        <a href="#" class="logo" aria-label="Home">
+            <svg class="sabio-logo" viewBox="80 230 450 280" style="height: 80px; width: auto; overflow: visible;">
+                <g transform="translate(-16.849067,148.89872)">
+                    <path d="m 231.50612,132.50285 c 20.99,7.67 54.22,29.75 69.69,46.4 0.44,0.48 0.8,1.08 0.98,1.71 l -21.05,17.05 c -10.95,-9.26 -21.68,-18.8 -34,-26.28 -25.25,-15.32 -56.68,-25.39 -86.1,-16.78 -47.08,13.78 -51.24,61.65 -7.71,84 38.58,19.81001 85.14,4.68 119.54,-16.84 38.78,-24.26999 64.23,-61.38999 106.5,-82.19999 42.22,-20.78001 96.78,-21.73001 133.18,11.09999 38.57,34.78 21.72,91.63 -21.91,111.97 -3.99,1.86001 -5.3,2.61001 -9.47,1.28001 -8.57,-2.72001 -18.83,-7.75 -27.27,-11.15001 -1.94,-0.78 -11.52,-3.88 -11.98,-4.97 -0.11,-0.27 -0.26,-1.49 0.35,-1.38999 2.48,-0.83001 5.36,-0.22 7.71,-0.7 23.33,-4.79 51.8,-21 53.51,-47.61 1.67,-26.06 -29.06,-43.39 -51.7,-45.45 -41.25,-3.75 -74.71,17.41 -104.26,43.19 -6.23,5.44 -12.22,11.10999 -18.06,16.95 0,0.49 2.66,1.65 3.22,1.84999 6.79,2.43001 13.22,4.59001 19.81,7.31 22.52,9.29001 43.44,22.06 65.68,32.07001 37.41,16.81999 86,25.81999 107.45,64.3 17.17,30.8 8.49,65.8 -20.83,84.99 -35.04,22.93 -81.46,20.29 -118.4,3.33 -22.84,-10.49 -41.64,-25.74 -60.2,-42.33 -0.33,-0.5 -0.23,-1.18 -0.04,-1.72001 0.73,-2.07999 15.31,-12.18999 18.12,-13.97999 0.9,-0.57 0.58,-1.75 2.93,-1.65001 2.07,0.09 3.17,2.72001 4.46,3.74 29.14,23.07001 58.75,44.88 98.44,42.57001 54.6,-3.17001 75.62,-56.42001 23.56,-84.59 -39.84,-21.56 -85.66,-6.4 -121.36,15.64999 -42.45,26.22001 -72.8,67.03001 -120.63,85.58001 -39.46,15.29999 -94.62,15.56999 -124.28,-18.80001 -26.830004,-31.08999 -17.160004,-75.9 14.7,-99.19999 2.75,-2.01 12.51,-8.28 15.35,-8.99 2.84,-0.71001 5.9,2.37 8.22,3.42999 5.87,2.67 13.03,5.96001 19.02,8.1 1.2,0.43001 9.92,2.54 9.91,3.08001 -2.02,2.08 -5.47,1.93999 -7.9,2.81999 -16.38,5.97001 -36.9,19.35 -42.23,36.86 -9.53,31.32001 19.74,53.5 48.17,55.47001 46.96,3.25 85.47,-27.08001 117.88,-56.66001 1.06,-0.96999 6.09,-4.32 6.18,-4.69999 0.15,-0.7 0.05,-1.72001 -0.58,-2.19 l -29.96,-10.72 c -20.06,-9.05001 -40.07,-18.45001 -60.48,-26.53 -35.78,-14.18001 -81.26,-24.89001 -103.37,-59.34001 -15.240004,-23.75 -13.730004,-57.09999 5.34,-78.21 30.73,-34.01999 82.92,-36.79999 123.87,-21.82999 z m 142.94,123.71 c -18.04,-7.32 -37.12,-21.03 -56.62,-23.9 -19.69,-2.89 -56.13,20.87 -74.26,30.19 -5.98,3.08 -12.19,5.85 -18.27,8.74 -2.95,1.69001 6.32,4.81001 7.09,5.23 14.16,7.69 28.67,16.02 43.24,22.86 28.53,13.39 43.25,15.78 72.58,2.25 17.03,-7.86 33.68,-17.95 50.35,-26.48 1.96,-1 3.88,-0.96 5.47,-3.01 l -13.74,-7.72 z" />
+                    <path d="m 331.16004,260.22566 c 9.25,12.36 2.15,32.28001 -14.09,33.55001 -14.33,1.12 -25.28,-7.4 -24.56,-22.29 1,-20.57 26.39,-27.64 38.65,-11.26001 z" />
+                </g>
+            </svg>
+        </a>
         <div class="nav-right" style="display: flex; align-items: center; gap: 2rem;">
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Work</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#contact" class="btn-primary">Let's Build or Fix It</a></li>
+                <li><a href="#about" data-en="About" data-es="Sobre mí" data-de="Über mich">About</a></li>
+                <li><a href="#portfolio" data-en="Work" data-es="Trabajos" data-de="Arbeiten">Work</a></li>
+                <li><a href="#process" data-en="Process" data-es="Proceso" data-de="Prozess">Process</a></li>
+                <li><a href="#contact" class="btn-primary" data-en="Let's Build or Fix It" data-es="Construyamos o Arreglemos" data-de="Lass uns bauen oder reparieren">Let's Build or Fix It</a></li>
             </ul>
+            <select id="nav-lang-select" class="lang-select" style="padding: 0.3rem; border: none; background: transparent; cursor: pointer; font-family: inherit; font-size: 1rem; color: inherit;">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="de">DE</option>
+            </select>
             <div class="theme-toggle" id="theme-toggle" style="cursor: pointer;">
                 <i data-feather="moon"></i>
             </div>
@@ -36,9 +72,9 @@
 
     <header class="hero">
         <div class="hero-content fade-in">
-            <h1>Functional Solutions, Crafted with Care</h1>
-            <p>I fix problems and build useful, beautiful things using wood, metal, and modern maker tools.</p>
-            <a href="#portfolio" class="btn-outline">View Projects</a>
+            <h1 data-en="Functional Solutions, Crafted with Care" data-es="Soluciones Funcionales, Creadas con Cuidado" data-de="Funktionale Lösungen, mit Sorgfalt gefertigt">Functional Solutions, Crafted with Care</h1>
+            <p data-en="I fix problems and build useful, beautiful things using wood, metal, and modern maker tools." data-es="Arreglo problemas y construyo cosas útiles y hermosas usando madera, metal y herramientas modernas." data-de="Ich löse Probleme und baue nützliche, schöne Dinge mit Holz, Metall und modernen Maker-Werkzeugen.">I fix problems and build useful, beautiful things using wood, metal, and modern maker tools.</p>
+            <a href="#portfolio" class="btn-outline" data-en="View Projects" data-es="Ver Proyectos" data-de="Projekte ansehen">View Projects</a>
         </div>
     </header>
 
@@ -48,13 +84,13 @@
                 <img src="assets/profile.jpg" alt="Santos the Maker">
             </div>
             <div class="about-text fade-in">
-                <h2>The Maker & Problem Solver</h2>
-                <p>Hello, I am <strong>Santos</strong>. While I am a trained Schreiner (carpenter) by trade, my true passion lies in being a versatile "manitas"—someone who solves practical problems with creativity and craftsmanship.</p>
-                <p>Working out of Tüftelwerk Luzern, I've expanded my toolkit far beyond wood to include metalworking, leathercraft, 3D printing, and electronics upcycling. Whether it's repairing a broken item, building a custom piece of furniture, or recycling e-bike batteries, my goal is always the same: highly functional solutions that also look great.</p>
+                <h2 data-en="The Maker & Problem Solver" data-es="El Manitas y Solucionador de Problemas" data-de="Der Macher & Problemlöser">The Maker & Problem Solver</h2>
+                <p data-en="Hello, I am Santos. While I am a trained Schreiner (carpenter) by trade, my true passion lies in being a versatile &quot;manitas&quot;—someone who solves practical problems with creativity and craftsmanship." data-es="Hola, soy Santos. Aunque soy carpintero (Schreiner) de profesión, mi verdadera pasión es ser un &quot;manitas&quot; versátil: alguien que resuelve problemas prácticos con creatividad y artesanía." data-de="Hallo, ich bin Santos. Obwohl ich gelernter Schreiner bin, liegt meine wahre Leidenschaft darin, ein vielseitiger &quot;Manitas&quot; (Handwerker) zu sein – jemand, der praktische Probleme mit Kreativität und Handwerkskunst löst.">Hello, I am <strong>Santos</strong>. While I am a trained Schreiner (carpenter) by trade, my true passion lies in being a versatile "manitas"—someone who solves practical problems with creativity and craftsmanship.</p>
+                <p data-en="Working out of Tüftelwerk Luzern, I've expanded my toolkit far beyond wood to include metalworking, leathercraft, 3D printing, and electronics upcycling. Whether it's repairing a broken item, building a custom piece of furniture, or recycling e-bike batteries, my goal is always the same: highly functional solutions that also look great." data-es="Trabajando desde el Tüftelwerk Luzern, he ampliado mis herramientas más allá de la madera para incluir metalurgia, marroquinería, impresión 3D y reciclaje electrónico. Ya sea reparar un artículo roto, construir un mueble a medida o reciclar baterías de bicicletas eléctricas, mi objetivo es siempre el mismo: soluciones altamente funcionales que además se vean geniales." data-de="Vom Tüftelwerk Luzern aus habe ich mein Werkzeug-Arsenal weit über Holz hinaus auf Metallbearbeitung, Lederverarbeitung, 3D-Druck und Elektronik-Upcycling erweitert. Egal, ob es darum geht, einen kaputten Gegenstand zu reparieren, ein massgeschneidertes Möbelstück zu bauen oder E-Bike-Batterien zu recyceln, mein Ziel ist immer dasselbe: hochfunktionale Lösungen, die auch grossartig aussehen.">Working out of Tüftelwerk Luzern, I've expanded my toolkit far beyond wood to include metalworking, leathercraft, 3D printing, and electronics upcycling. Whether it's repairing a broken item, building a custom piece of furniture, or recycling e-bike batteries, my goal is always the same: highly functional solutions that also look great.</p>
                 <div class="stats">
-                    <div><strong>Schreiner</strong><br>EFZ Trained</div>
-                    <div><strong>Multi</strong><br>Disciplinary</div>
-                    <div><strong>100%</strong><br>Custom Solutions</div>
+                    <div><strong data-en="Schreiner" data-es="Schreiner" data-de="Schreiner">Schreiner</strong><br><span data-en="EFZ Trained" data-es="Titulación EFZ" data-de="EFZ Ausbildung">EFZ Trained</span></div>
+                    <div><strong data-en="Multi" data-es="Multi" data-de="Multi">Multi</strong><br><span data-en="Disciplinary" data-es="Disciplinario" data-de="Disziplinär">Disciplinary</span></div>
+                    <div><strong data-en="100%" data-es="100%" data-de="100%">100%</strong><br><span data-en="Custom Solutions" data-es="A Medida" data-de="Massgeschneidert">Custom Solutions</span></div>
                 </div>
             </div>
         </div>
@@ -62,7 +98,7 @@
 
     <section id="portfolio" class="bg-light">
         <div class="container">
-            <h2 class="section-title">Selected Works</h2>
+            <h2 class="section-title" data-en="Selected Works" data-es="Trabajos Destacados" data-de="Ausgewählte Arbeiten">Selected Works</h2>
             <div class="gallery">
 
                 <div class="card fade-in">
@@ -70,8 +106,8 @@
                         <img src="assets/frenoPuerta.png" alt="Spontaneous Doorstop">
                     </div>
                     <div class="card-info">
-                        <h3>Spontaneous Door Wedge</h3>
-                        <p>A quick, on-the-fly design that perfectly fulfills its purpose while adding character to the room.</p>
+                        <h3 data-en="Spontaneous Door Wedge" data-es="Tope de Puerta Espontáneo" data-de="Spontaner Türkeil">Spontaneous Door Wedge</h3>
+                        <p data-en="A quick, on-the-fly design that perfectly fulfills its purpose while adding character to the room." data-es="Un diseño rápido y sobre la marcha que cumple perfectamente su propósito mientras añade carácter a la habitación." data-de="Ein schnelles, spontanes Design, das seinen Zweck perfekt erfüllt und dem Raum Charakter verleiht.">A quick, on-the-fly design that perfectly fulfills its purpose while adding character to the room.</p>
                     </div>
                 </div>
 
@@ -80,8 +116,8 @@
                         <img src="assets/marco.png" alt="Pear Wood Frames">
                     </div>
                     <div class="card-info">
-                        <h3>Pear Wood Frames</h3>
-                        <p>Minimalist frames crafted from pear wood, born from a collaborative design with my flatmate.</p>
+                        <h3 data-en="Pear Wood Frames" data-es="Marcos de Madera de Peral" data-de="Birnbaumholz-Rahmen">Pear Wood Frames</h3>
+                        <p data-en="Minimalist frames crafted from pear wood, born from a collaborative design with my flatmate." data-es="Marcos minimalistas elaborados en madera de peral, nacidos de un diseño colaborativo con mi compañero de piso." data-de="Minimalistische Rahmen aus Birnbaumholz, entstanden aus einem gemeinsamen Design mit meinem Mitbewohner.">Minimalist frames crafted from pear wood, born from a collaborative design with my flatmate.</p>
                     </div>
                 </div>
 
@@ -90,18 +126,18 @@
                         <img src="assets/parque.png" alt="Parquet Installation">
                     </div>
                     <div class="card-info">
-                        <h3>Parquet Installation</h3>
-                        <p>Precision flooring installation featuring a complex round cutout. Delivered for a respectful and highly appreciative client.</p>
+                        <h3 data-en="Parquet Installation" data-es="Instalación de Parquet" data-de="Parkettverlegung">Parquet Installation</h3>
+                        <p data-en="Precision flooring installation featuring a complex round cutout. Delivered for a respectful and highly appreciative client." data-es="Instalación de precisión con un recorte redondo complejo. Entregado a un cliente respetuoso y muy agradecido." data-de="Präzise Parkettverlegung mit komplexem rundem Ausschnitt. Für einen respektvollen und sehr wertschätzenden Kunden geliefert.">Precision flooring installation featuring a complex round cutout. Delivered for a respectful and highly appreciative client.</p>
                     </div>
                 </div>
 
                 <div class="card fade-in">
                     <div class="card-image placeholder-img">
-                        <span>In Progress</span>
+                        <span data-en="In Progress" data-es="En Progreso" data-de="In Arbeit">In Progress</span>
                     </div>
                     <div class="card-info">
-                        <h3>E-Bike Battery Bank</h3>
-                        <p>An ongoing upcycling project recycling old e-bike batteries into a massive power station.</p>
+                        <h3 data-en="E-Bike Battery Bank" data-es="Banco de Baterías E-Bike" data-de="E-Bike-Batteriebank">E-Bike Battery Bank</h3>
+                        <p data-en="An ongoing upcycling project recycling old e-bike batteries into a massive power station." data-es="Un proyecto de reciclaje en curso, convirtiendo baterías viejas de bicicletas eléctricas en una enorme estación de energía." data-de="Ein laufendes Upcycling-Projekt, bei dem alte E-Bike-Batterien zu einer riesigen Stromstation recycelt werden.">An ongoing upcycling project recycling old e-bike batteries into a massive power station.</p>
                     </div>
                 </div>
 
@@ -110,22 +146,22 @@
     </section>
 
     <section id="process" class="container">
-        <h2 class="section-title">My Approach</h2>
+        <h2 class="section-title" data-en="My Approach" data-es="Mi Enfoque" data-de="Mein Ansatz">My Approach</h2>
         <div class="process-grid">
             <div class="process-item fade-in">
                 <i data-feather="message-circle"></i>
-                <h3>1. The Problem</h3>
-                <p>We discuss the issue you're facing, whether it's a broken item or a need for a custom solution.</p>
+                <h3 data-en="1. The Problem" data-es="1. El Problema" data-de="1. Das Problem">1. The Problem</h3>
+                <p data-en="We discuss the issue you're facing, whether it's a broken item or a need for a custom solution." data-es="Discutimos el problema al que te enfrentas, ya sea un artículo roto o la necesidad de una solución a medida." data-de="Wir besprechen das Problem, mit dem Sie konfrontiert sind, sei es ein kaputter Gegenstand oder der Bedarf an einer massgeschneiderten Lösung.">We discuss the issue you're facing, whether it's a broken item or a need for a custom solution.</p>
             </div>
             <div class="process-item fade-in">
                 <i data-feather="tool"></i>
-                <h3>2. The Plan</h3>
-                <p>We figure out the best materials for the job: wood, metal, 3D printing, or electronics.</p>
+                <h3 data-en="2. The Plan" data-es="2. El Plan" data-de="2. Der Plan">2. The Plan</h3>
+                <p data-en="We figure out the best materials for the job: wood, metal, 3D printing, or electronics." data-es="Descubrimos los mejores materiales para el trabajo: madera, metal, impresión 3D o electrónica." data-de="Wir ermitteln die besten Materialien für die Aufgabe: Holz, Metall, 3D-Druck oder Elektronik.">We figure out the best materials for the job: wood, metal, 3D printing, or electronics.</p>
             </div>
             <div class="process-item fade-in">
                 <i data-feather="check-circle"></i>
-                <h3>3. The Solution</h3>
-                <p>Crafting a highly functional and aesthetically pleasing result in the workshop.</p>
+                <h3 data-en="3. The Solution" data-es="3. La Solución" data-de="3. Die Lösung">3. The Solution</h3>
+                <p data-en="Crafting a highly functional and aesthetically pleasing result in the workshop." data-es="Creando un resultado altamente funcional y estéticamente agradable en el taller." data-de="Die Fertigung eines hochfunktionalen und ästhetisch ansprechenden Ergebnisses in der Werkstatt.">Crafting a highly functional and aesthetically pleasing result in the workshop.</p>
             </div>
         </div>
     </section>
@@ -133,31 +169,31 @@
     <section id="contact" class="bg-dark">
         <div class="container contact-container">
             <div class="contact-text">
-                <h2>Let's fix it, build it, or create it.</h2>
-                <p>I'm available for custom projects, repairs, and general problem-solving. Tell me what you need.</p>
+                <h2 data-en="Let's fix it, build it, or create it." data-es="Vamos a arreglarlo, construirlo o crearlo." data-de="Lass es uns reparieren, bauen oder erschaffen.">Let's fix it, build it, or create it.</h2>
+                <p data-en="I'm available for custom projects, repairs, and general problem-solving. Tell me what you need." data-es="Estoy disponible para proyectos a medida, reparaciones y resolución de problemas en general. Dime qué necesitas." data-de="Ich stehe für massgeschneiderte Projekte, Reparaturen und allgemeine Problemlösungen zur Verfügung. Sagen Sie mir, was Sie brauchen.">I'm available for custom projects, repairs, and general problem-solving. Tell me what you need.</p>
                 <ul class="contact-details">
                     <li><i data-feather="mail"></i> contact@santoswood.com</li>
                     <li><i data-feather="instagram"></i> @santos_maker</li>
-                    <li><i data-feather="map-pin"></i> Lucerne & Surrounding Areas</li>
+                    <li><i data-feather="map-pin"></i> <span data-en="Lucerne & Surrounding Areas" data-es="Lucerna y Alrededores" data-de="Luzern & Umgebung">Lucerne & Surrounding Areas</span></li>
                 </ul>
             </div>
             <form name="contact" method="POST" data-netlify="true" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="name" placeholder="Your Name" data-en-placeholder="Your Name" data-es-placeholder="Tu Nombre" data-de-placeholder="Dein Name" required>
+                <input type="email" name="email" placeholder="Your Email" data-en-placeholder="Your Email" data-es-placeholder="Tu Correo" data-de-placeholder="Deine E-Mail" required>
                 <select name="type">
-                    <option value="custom">Custom Wood/Metal Project</option>
-                    <option value="repair">Repair & Restoration</option>
-                    <option value="upcycling">Upcycling & Electronics</option>
-                    <option value="manitas">General "Manitas" Task</option>
+                    <option value="custom" data-en="Custom Wood/Metal Project" data-es="Proyecto a medida Madera/Metal" data-de="Massgeschneidertes Holz-/Metallprojekt">Custom Wood/Metal Project</option>
+                    <option value="repair" data-en="Repair & Restoration" data-es="Reparación y Restauración" data-de="Reparatur & Restaurierung">Repair & Restoration</option>
+                    <option value="upcycling" data-en="Upcycling & Electronics" data-es="Reciclaje y Electrónica" data-de="Upcycling & Elektronik">Upcycling & Electronics</option>
+                    <option value="manitas" data-en="General &quot;Manitas&quot; Task" data-es="Tarea general de &quot;Manitas&quot;" data-de="Allgemeine &quot;Manitas&quot; Aufgabe">General "Manitas" Task</option>
                 </select>
-                <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
-                <button type="submit" class="btn-primary">Send Request</button>
+                <textarea name="message" rows="5" placeholder="How can I help you?" data-en-placeholder="How can I help you?" data-es-placeholder="¿Cómo puedo ayudarte?" data-de-placeholder="Wie kann ich helfen?" required></textarea>
+                <button type="submit" class="btn-primary" data-en="Send Request" data-es="Enviar Solicitud" data-de="Anfrage senden">Send Request</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Santos Maker & Repair. All rights reserved.</p>
+        <p><span data-en="&copy; 2024 Santos Maker & Repair. All rights reserved." data-es="&copy; 2024 Santos Maker & Repair. Todos los derechos reservados." data-de="&copy; 2024 Santos Maker & Repair. Alle Rechte vorbehalten.">&copy; 2024 Santos Maker & Repair. All rights reserved.</span></p>
     </footer>
 
     <script src="script.js"></script>
