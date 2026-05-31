@@ -24,6 +24,10 @@ html {
     scroll-behavior: smooth;
 }
 
+section {
+    scroll-margin-top: 80px;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -144,7 +148,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +172,7 @@ nav {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 600px;
+    max-width: 900px;
     padding: 2rem;
 }
 
@@ -465,4 +469,145 @@ body.dark-theme .lang-select option {
     border: 1px solid #ccc;
     color: var(--text-color);
     border-radius: 4px;
+}
+
+/* Project Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-content {
+    background: var(--bg-color);
+    color: var(--text-color);
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+body.dark-theme .modal-content {
+    background: #1a1a1a;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 10;
+}
+body.dark-theme .modal-close-btn {
+    color: var(--text-color);
+}
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+@media(min-width: 768px) {
+    .modal-body {
+        flex-direction: row;
+        height: 70vh;
+        min-height: 500px;
+    }
+}
+.modal-image-container {
+    flex: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    overflow: hidden;
+    height: 300px; /* mobile height */
+}
+@media(min-width: 768px) {
+    .modal-image-container {
+        height: auto;
+    }
+}
+.modal-image-container img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.modal-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+.modal-nav-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+#modal-prev { left: 1rem; }
+#modal-next { right: 1rem; }
+
+.modal-text-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+.modal-indicators {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+.indicator.active {
+    background: var(--accent-color);
+}
+
+/* Card Cycling Support */
+.card-image {
+    position: relative;
+    cursor: pointer;
+}
+.card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.card-image img.active {
+    opacity: 1;
 }
