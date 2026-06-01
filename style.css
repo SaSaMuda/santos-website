@@ -351,13 +351,15 @@ nav {
 .contact-form select {
     padding: 1rem 3rem 1rem 1rem;
     border: none;
-    background: #333;
+    background: #333 url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1rem center;
     color: white;
     font-family: inherit;
     box-sizing: border-box;
-    width: max-content;
+    width: 100%;
     cursor: pointer;
-    align-self: flex-start;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .contact-form button {
