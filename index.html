@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-en="Santos | Craft, Repair & Creative Solutions" data-es="Santos | Artesanía, Reparación y Soluciones Creativas" data-de="Santos | Handwerk, Reparatur & Kreative Lösungen">Santos | Craft, Repair & Creative Solutions</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
@@ -142,7 +142,9 @@
                     <li><i data-feather="map-pin"></i> <span data-en="Lucerne & Surrounding Areas" data-es="Lucerna y Alrededores" data-de="Luzern & Umgebung">Lucerne & Surrounding Areas</span></li>
                 </ul>
             </div>
-            <form name="contact" method="POST" data-netlify="true" class="contact-form">
+            <form action="https://formsubmit.co/santos.weise@gmx.es" method="POST" class="contact-form">
+                <input type="hidden" name="_next" value="https://sasamuda.github.io/">
+                <input type="hidden" name="_captcha" value="false">
                 <input type="text" name="name" placeholder="Your Name" data-en-placeholder="Your Name" data-es-placeholder="Tu Nombre" data-de-placeholder="Dein Name" required>
                 <input type="email" name="email" placeholder="Your Email" data-en-placeholder="Your Email" data-es-placeholder="Tu Correo" data-de-placeholder="Deine E-Mail" required>
                 <select name="type">
