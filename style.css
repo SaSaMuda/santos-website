@@ -224,32 +224,34 @@ nav {
 }
 
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
-}
-
-@media (max-width: 1024px) {
-    .gallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: 1fr;
-    }
 }
 
 .card {
     background: var(--bg-color);
     transition: transform 0.3s;
+    width: calc(25% - 1.5rem);
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: calc(33.333% - 1.333rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
 }
 
 .card:hover {
@@ -343,6 +345,8 @@ nav {
     background: #333;
     color: white;
     font-family: inherit;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .contact-form button {
