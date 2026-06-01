@@ -178,24 +178,29 @@ nav {
 
 /* About Section */
 #about {
-    scroll-margin-top: 20vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-margin-top: 0;
 }
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     gap: 4rem;
     align-items: center;
+    width: 100%;
 }
 
 .about-image {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .about-image img {
     border-radius: 4px;
-    box-shadow: 20px 20px 0 var(--secondary-color);
+    box-shadow: 15px 15px 0 var(--secondary-color);
     max-height: 450px;
     width: auto;
     max-width: 100%;
