@@ -348,6 +348,11 @@ nav {
     width: 100%;
 }
 
+.contact-form textarea {
+    flex-grow: 1;
+    min-height: 150px;
+}
+
 .contact-form select {
     padding: 1rem 3rem 1rem 1rem;
     border: none;
