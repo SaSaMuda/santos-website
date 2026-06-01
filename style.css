@@ -178,9 +178,7 @@ nav {
 
 /* About Section */
 #about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    scroll-margin-top: 20vh;
 }
 
 .about-grid {
@@ -188,16 +186,19 @@ nav {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    width: 100%;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
 }
 
 .about-image img {
     border-radius: 4px;
     box-shadow: 20px 20px 0 var(--secondary-color);
-    max-height: 480px;
-    width: 100%;
-    object-fit: cover;
-    object-position: bottom;
+    max-height: 450px;
+    width: auto;
+    max-width: 100%;
 }
 
 .stats {
