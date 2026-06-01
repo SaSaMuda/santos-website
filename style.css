@@ -338,7 +338,6 @@ nav {
 }
 
 .contact-form input,
-.contact-form select,
 .contact-form textarea {
     padding: 1rem;
     border: none;
@@ -347,6 +346,18 @@ nav {
     font-family: inherit;
     box-sizing: border-box;
     width: 100%;
+}
+
+.contact-form select {
+    padding: 1rem 3rem 1rem 1rem;
+    border: none;
+    background: #333;
+    color: white;
+    font-family: inherit;
+    box-sizing: border-box;
+    width: max-content;
+    cursor: pointer;
+    align-self: flex-start;
 }
 
 .contact-form button {
